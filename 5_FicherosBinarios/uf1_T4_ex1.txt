@@ -1,0 +1,6 @@
+Averigua jerárquicamente, ¿cuál es la relación entre DataInputStream y FileInputStream?
+
+java.lang.Object
+java.io.InputStream
+java.io.FilterInputStream
+java.io.DataInputStream

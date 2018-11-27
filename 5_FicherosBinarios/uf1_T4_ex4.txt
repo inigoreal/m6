@@ -1,0 +1,5 @@
+Vuelve a ejecutar los problemas anteriores pero en los pasos intermedios
+trata de leer el fichero “FicheroDatos.dat” con algún editor de texto del
+sistema. ¿Qué pasa?
+
+	No lo consigue decodificar correctamente ya que el fichero esta en binario y el sistema de ficheros no lo sabe decodificar.
