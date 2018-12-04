@@ -1,0 +1,9 @@
+1:Persona1:10:1120.41
+2:Persona2:10:2120.42
+3:Persona3:10:312.45
+4:Persona4:10:212.45
+5:Persona5:10:112.46
+6:Persona6:10:1020.42
+7:Persona7:10:1000.41
+8:Persona8:10:120.45
+9:Persona9:10:1200.42

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<musica>
+	<album>
+		<autor>Autor1</autor>
+		<titulo>titulo1</titulo>
+		<formato>formato1</formato>
+	</album>
+	<album>
+		<autor>Autor2</autor>
+		<titulo>titulo2</titulo>
+		<formato>formato2</formato>
+	</album>
+	<album>
+		<autor>Autor3</autor>
+		<titulo>titulo3</titulo>
+		<formato>formato3</formato>
+	</album>
+	<album>
+		<autor>Autor4</autor>
+		<titulo>titulo4</titulo>
+		<formato>formato4</formato>
+	</album>
+	<album>
+		<autor>Autor5</autor>
+		<titulo>titulo5</titulo>
+		<formato>formato5</formato>
+	</album>
+</musica>
