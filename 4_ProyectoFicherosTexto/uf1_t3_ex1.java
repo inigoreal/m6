@@ -1,5 +1,3 @@
-/*Proyecto ficheros pdf4
-4_ProyectoFicherosTexto.pdf*/
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -12,11 +10,13 @@ public class uf1_t3_ex1 {
 		BufferedReader entrada2 = null;
 		PrintWriter sortidaXML = null;
 		PrintWriter sortidaLOG = null;
+		String linux="/";
+		String windows="\\";
 		String nomEtiquetas = "";
 		String openFitxer="";
 		String nomXml="";
-		String separador="/";
-		String separador2="/";
+		String separador="";
+		String separador2="";
 		int x=0,y=0,totalFitxers=1;
 		ArrayList<String> documentsCSV = new ArrayList<String>();
 		String linea,linea2;
@@ -47,6 +47,24 @@ public class uf1_t3_ex1 {
 				nomXml = mode;
 			}else {
 				break;
+			}
+		}
+		System.out.println("Fitxer etiquetas: ");
+		nomEtiquetas = reader.readLine();
+		if (mode.contains("\\")){
+			if (mode.endsWith("\\")){separador="";}
+			else{separador=windows;separador2="\\\\";}
+		}else if (mode.contains("/")){
+			if (mode.endsWith("/")){separador="";}
+			else{separador=linux;separador2=linux;}
+		}else {
+			System.out.println("Sistema operatiu [Linux (L) | Windows (W)]");
+			String so = reader.readLine();
+			if (so.toUpperCase().equals("W")) {
+				separador =windows;
+			}
+			else {
+				separador =linux;
 			}
 		}
 		sortidaLOG = new PrintWriter (new FileWriter ("doc.log",true));
@@ -94,7 +112,7 @@ public class uf1_t3_ex1 {
 					System.exit(0);
 				}try{
 					sortidaXML = new PrintWriter (new FileWriter (openFitxer.replace(".csv", ".xml")));
-					nomXml = openFitxer.getName();
+					nomXml = "doc";
 					sortidaLOG.println("\nTot Correcte al fitxer: "+openFitxer.replace(".csv", ".xml")+". Data: "+Calendar.getInstance().getTime());
 				}catch (Exception e){
 					sortidaLOG.println("\nError al obrir el fitxer: "+openFitxer.replace(".csv", ".xml")+". Data: "+Calendar.getInstance().getTime());
@@ -145,7 +163,7 @@ public class uf1_t3_ex1 {
 				sortidaLOG.println("\nError al tancar el fitxer: "+openFitxer.replace(".csv", ".xml")+". Data: "+Calendar.getInstance().getTime());
 			}
 		}
-		System.out.println("Finalització del programa. Temps total: "+((Calendar.getInstance().getTime().getTime()-iniciTime))+"ms. Lineas Processades: "+y);
+		System.out.println("Finalitzacio del programa. Temps total: "+((Calendar.getInstance().getTime().getTime()-iniciTime))+"ms. Lineas Processades: "+y);
 		sortidaLOG.println("\nFinalitzacio del programa. Temps total: "+((Calendar.getInstance().getTime().getTime()-iniciTime))+"ms. Lineas Processades: "+y+"\n\n");
 		sortidaLOG.close();
 
