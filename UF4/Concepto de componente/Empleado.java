@@ -50,20 +50,25 @@ public class Empleado implements Serializable{
 		return cargo;
 	}
 	public void setCargo(String cargo) {
+		try {
 		propertySupport.firePropertyChange("cargo", this.cargo, cargo);
-	}
-	public void setCargo2(String cargo) {
 		this.cargo = cargo;
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 	public int getSueldo() {
 		return sueldo;
 	}
 	public void setSueldo(int sueldo) {
-		propertySupport.firePropertyChange("sueldo", this.sueldo, sueldo);
+		try {
+			propertySupport.firePropertyChange("sueldo", this.sueldo, sueldo);
+			this.sueldo = sueldo;
+			}catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
 	}
-	public void setSueldo2(int sueldo) {
-		this.sueldo = sueldo;
-	}
+
 	public PropertyChangeSupport getPropertySupport() {
 		return propertySupport;
 	}

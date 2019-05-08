@@ -20,25 +20,26 @@ public class PanelEmpleado implements Serializable, PropertyChangeListener  {
 					match = true;
 				}
 			}
-			if (match) {
-				empleado.setCargo2(evt.getNewValue().toString());
-			}else {
-				System.out.println("Cargo no esta en la lista");
-			}
-
 			System.out.println("Cargo Anterior: "+evt.getOldValue());
 			System.out.println("Cargo Intento: "+evt.getNewValue());
-			System.out.println("Cargo Final: "+empleado.getCargo());
+			
+			if (!match) {
+				System.out.println("Cargo Final: "+evt.getOldValue());
+				throw new IllegalArgumentException("Cargo no esta en la lista");
+			}else {
+				System.out.println("Cargo Final: "+evt.getNewValue());
+			}
+
+
 		}else {
 			int salarioAnterior = this.empleado.getSueldo();
 			int newValueSalario = Integer.parseInt(evt.getNewValue().toString());
 			int prc2 = salarioAnterior/this.limiteVariacionSueldo;
 			if (newValueSalario-salarioAnterior<=prc2) {
-				empleado.setSueldo2(newValueSalario);
 				System.out.println("Sueldo establecido, variacion del salario, menor a: "+this.limiteVariacionSueldo+"%");
 			}
 			else {
-				System.out.println("Sueldo no establecido, variacion del salario, mayor a: "+this.limiteVariacionSueldo+"%");
+				throw new IllegalArgumentException("Sueldo no establecido, variacion del salario, mayor a: "+this.limiteVariacionSueldo+"%");
 			}
 		}
 	}

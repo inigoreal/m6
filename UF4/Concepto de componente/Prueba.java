@@ -10,19 +10,20 @@ public class Prueba {
         
         emple.addPropertyChangeListener(panel);
         emple.setSueldo(1200);
-        System.out.println(emple.getSueldo());
+        System.out.println("Sueldo: "+emple.getSueldo());
         
         emple.setSueldo(1100);
-        System.out.println(emple.getSueldo());
+        System.out.println("Sueldo: "+emple.getSueldo());
         
         emple.setSueldo(1200);
-        System.out.println(emple.getSueldo());
+        System.out.println("Sueldo: "+emple.getSueldo()+"\n");
         
+        System.out.println("Cargo: "+emple.getCargo());
         emple.setCargo("CEO");
-        System.out.println(emple.getCargo());
+        System.out.println("Cargo: "+emple.getCargo());
         
         emple.setCargo("Cliente");
-        System.out.println(emple.getCargo());
+        System.out.println("Cargo: "+emple.getCargo());
         
     }
 }
